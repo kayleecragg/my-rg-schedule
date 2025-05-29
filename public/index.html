@@ -296,19 +296,28 @@
       font-size: 0.9em;
     }
 
-    .not-before {
+    .status-box {
       float: right;
       font-size: 0.85em;
       padding: 2px 6px;
       border-radius: 6px;
       font-weight: bold;
-      background: #333;
-      color: #ffdd57;
     }
 
-    body.light .not-before {
+    body.dark .status-box {
+      background: #333;
+    }
+
+    body.light .status-box {
       background: #eee;
-      color: #a66c00;
+    }
+
+    body.dark .match.upcoming .status-box {
+      color: #ffdd57; /* yellow for dark mode */
+    }
+
+    body.light .match.upcoming .status-box {
+      color: #a66c00; /* brown for light mode */
     }
 
     #schedule {
@@ -752,7 +761,7 @@
     }
 
     // Court rendering logic
-    const API_BASE = "https://tennis.ngrok.app/schedule.json";
+    const API_BASE = "/schedule.json";
     const savedCourts = localStorage.getItem('selectedCourts');
     let selectedCourts = new Set(savedCourts ? JSON.parse(savedCourts) : []);
     const isFirstLoad = !savedCourts;
@@ -857,10 +866,23 @@
           else if (m.status === 'interrupted') statusClass = 'interrupted';
           d.className = `match ${statusClass}`;
           let txt = '';
-          if (m.status === 'not_started' && m.notBefore) {
-            const aestTime = convertParisTimeToAEST(m.notBefore);
-            txt += `<div class="not-before">Not before ${aestTime} AEST</div>`;
+          
+          // Status box for in_progress, interrupted, and not_before
+          if (m.status === 'in_progress' && m.duration !== undefined) {
+            // Convert duration to MM:SS format
+            const minutes = Math.floor(m.duration / 60);
+            const seconds = m.duration % 60;
+            const durationStr = `${minutes}h ${seconds.toString().padStart(2, '0')}m`;
+            txt += `<div class="status-box">${durationStr}</div>`;
+          } 
+          else if (m.status === 'interrupted') {
+            txt += `<div class="status-box">interrupted</div>`;
           }
+          else if (m.status === 'not_started' && m.notBefore) {
+            const aestTime = convertParisTimeToAEST(m.notBefore);
+            txt += `<div class="status-box">Not before ${aestTime} AEST</div>`;
+          }
+          
           if (m.typeLabel) {
             const roundText = m.round ? `<span style="color:#999;font-weight:normal"> (${m.round})</span>` : '';
             txt += `<div class="type-label">${m.typeLabel}${roundText}</div>`;

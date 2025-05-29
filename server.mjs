@@ -100,10 +100,10 @@ function normalizeMatch(match) {
     status: normalizeStatus(match.matchData.status),
     startTime: null,
     endTime: match.matchData.endTimestamp || null,
+    duration: match.matchData.durationInMinutes || 0,
     notBefore: match.matchData.notBefore || null,
     round: roundToShortLabel(match.matchData.roundLabel),
-    score,
-    duration: sourceMatch.matchData.durationInMinutes || 0
+    score
   };
 }
 

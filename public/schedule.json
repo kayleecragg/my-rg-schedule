@@ -20,9 +20,10 @@
       ],
       "seedA": null,
       "seedB": 3,
-      "status": "not_started",
+      "status": "finished",
       "startTime": null,
-      "endTime": null,
+      "endTime": 1748519550000,
+      "duration": 103,
       "notBefore": null,
       "round": "R2",
       "score": {
@@ -31,8 +32,14 @@
           "away": "0"
         },
         "sets": {
-          "home": [],
-          "away": []
+          "home": [
+            3,
+            6
+          ],
+          "away": [
+            6,
+            7
+          ]
         }
       }
     },
@@ -56,9 +63,10 @@
       ],
       "seedA": 1,
       "seedB": null,
-      "status": "not_started",
+      "status": "in_progress",
       "startTime": null,
       "endTime": null,
+      "duration": 78,
       "notBefore": null,
       "round": "R2",
       "score": {
@@ -67,8 +75,16 @@
           "away": "0"
         },
         "sets": {
-          "home": [],
-          "away": []
+          "home": [
+            6,
+            6,
+            0
+          ],
+          "away": [
+            3,
+            0,
+            1
+          ]
         }
       }
     },
@@ -95,6 +111,7 @@
       "status": "not_started",
       "startTime": null,
       "endTime": null,
+      "duration": 0,
       "notBefore": null,
       "round": "R2",
       "score": {
@@ -131,6 +148,7 @@
       "status": "not_started",
       "startTime": null,
       "endTime": null,
+      "duration": 0,
       "notBefore": "20:15",
       "round": "R2",
       "score": {
@@ -166,9 +184,10 @@
       ],
       "seedA": null,
       "seedB": 14,
-      "status": "not_started",
+      "status": "finished",
       "startTime": null,
-      "endTime": null,
+      "endTime": 1748525746000,
+      "duration": 265,
       "notBefore": null,
       "round": "R2",
       "score": {
@@ -177,8 +196,20 @@
           "away": "0"
         },
         "sets": {
-          "home": [],
-          "away": []
+          "home": [
+            6,
+            6,
+            6,
+            6,
+            4
+          ],
+          "away": [
+            7,
+            7,
+            2,
+            0,
+            6
+          ]
         }
       }
     },
@@ -205,6 +236,7 @@
       "status": "not_started",
       "startTime": null,
       "endTime": null,
+      "duration": 0,
       "notBefore": null,
       "round": "R2",
       "score": {
@@ -241,6 +273,7 @@
       "status": "not_started",
       "startTime": null,
       "endTime": null,
+      "duration": 0,
       "notBefore": null,
       "round": "R2",
       "score": {
@@ -277,6 +310,7 @@
       "status": "not_started",
       "startTime": null,
       "endTime": null,
+      "duration": 0,
       "notBefore": null,
       "round": "R2",
       "score": {
@@ -312,9 +346,10 @@
       ],
       "seedA": 6,
       "seedB": null,
-      "status": "not_started",
+      "status": "finished",
       "startTime": null,
-      "endTime": null,
+      "endTime": 1748514341000,
+      "duration": 73,
       "notBefore": null,
       "round": "R2",
       "score": {
@@ -323,8 +358,14 @@
           "away": "0"
         },
         "sets": {
-          "home": [],
-          "away": []
+          "home": [
+            6,
+            6
+          ],
+          "away": [
+            3,
+            4
+          ]
         }
       }
     },
@@ -348,9 +389,10 @@
       ],
       "seedA": 3,
       "seedB": null,
-      "status": "not_started",
+      "status": "interrupted",
       "startTime": null,
       "endTime": null,
+      "duration": 164,
       "notBefore": null,
       "round": "R2",
       "score": {
@@ -359,8 +401,18 @@
           "away": "0"
         },
         "sets": {
-          "home": [],
-          "away": []
+          "home": [
+            3,
+            6,
+            6,
+            4
+          ],
+          "away": [
+            6,
+            1,
+            2,
+            1
+          ]
         }
       }
     },
@@ -387,6 +439,7 @@
       "status": "not_started",
       "startTime": null,
       "endTime": null,
+      "duration": 0,
       "notBefore": null,
       "round": "R2",
       "score": {
@@ -423,6 +476,7 @@
       "status": "not_started",
       "startTime": null,
       "endTime": null,
+      "duration": 0,
       "notBefore": null,
       "round": "R2",
       "score": {
@@ -458,9 +512,10 @@
       ],
       "seedA": 9,
       "seedB": null,
-      "status": "not_started",
+      "status": "finished",
       "startTime": null,
-      "endTime": null,
+      "endTime": 1748520041000,
+      "duration": 172,
       "notBefore": null,
       "round": "R2",
       "score": {
@@ -469,8 +524,20 @@
           "away": "0"
         },
         "sets": {
-          "home": [],
-          "away": []
+          "home": [
+            6,
+            6,
+            4,
+            3,
+            2
+          ],
+          "away": [
+            2,
+            2,
+            6,
+            6,
+            6
+          ]
         }
       }
     },
@@ -494,9 +561,10 @@
       ],
       "seedA": 15,
       "seedB": null,
-      "status": "not_started",
+      "status": "finished",
       "startTime": null,
-      "endTime": null,
+      "endTime": 1748525605000,
+      "duration": 74,
       "notBefore": null,
       "round": "R2",
       "score": {
@@ -505,8 +573,14 @@
           "away": "0"
         },
         "sets": {
-          "home": [],
-          "away": []
+          "home": [
+            0,
+            3
+          ],
+          "away": [
+            6,
+            6
+          ]
         }
       }
     },
@@ -533,6 +607,7 @@
       "status": "not_started",
       "startTime": null,
       "endTime": null,
+      "duration": 0,
       "notBefore": null,
       "round": "R2",
       "score": {
@@ -569,6 +644,7 @@
       "status": "not_started",
       "startTime": null,
       "endTime": null,
+      "duration": 0,
       "notBefore": null,
       "round": "R2",
       "score": {
@@ -604,9 +680,10 @@
       ],
       "seedA": null,
       "seedB": 19,
-      "status": "not_started",
+      "status": "finished",
       "startTime": null,
-      "endTime": null,
+      "endTime": 1748521228000,
+      "duration": 186,
       "notBefore": null,
       "round": "R2",
       "score": {
@@ -615,8 +692,20 @@
           "away": "0"
         },
         "sets": {
-          "home": [],
-          "away": []
+          "home": [
+            2,
+            1,
+            6,
+            6,
+            6
+          ],
+          "away": [
+            6,
+            6,
+            4,
+            3,
+            3
+          ]
         }
       }
     },
@@ -640,9 +729,10 @@
       ],
       "seedA": 17,
       "seedB": null,
-      "status": "not_started",
+      "status": "in_progress",
       "startTime": null,
       "endTime": null,
+      "duration": 55,
       "notBefore": null,
       "round": "R2",
       "score": {
@@ -651,8 +741,14 @@
           "away": "0"
         },
         "sets": {
-          "home": [],
-          "away": []
+          "home": [
+            7,
+            1
+          ],
+          "away": [
+            6,
+            0
+          ]
         }
       }
     },
@@ -679,6 +775,7 @@
       "status": "not_started",
       "startTime": null,
       "endTime": null,
+      "duration": 0,
       "notBefore": null,
       "round": "R2",
       "score": {
@@ -715,6 +812,7 @@
       "status": "not_started",
       "startTime": null,
       "endTime": null,
+      "duration": 0,
       "notBefore": null,
       "round": "R2",
       "score": {
@@ -750,9 +848,10 @@
       ],
       "seedA": 25,
       "seedB": null,
-      "status": "not_started",
+      "status": "finished",
       "startTime": null,
-      "endTime": null,
+      "endTime": 1748516957000,
+      "duration": 120,
       "notBefore": null,
       "round": "R2",
       "score": {
@@ -761,8 +860,16 @@
           "away": "0"
         },
         "sets": {
-          "home": [],
-          "away": []
+          "home": [
+            0,
+            6,
+            3
+          ],
+          "away": [
+            6,
+            4,
+            6
+          ]
         }
       }
     },
@@ -786,9 +893,10 @@
       ],
       "seedA": null,
       "seedB": 20,
-      "status": "not_started",
+      "status": "finished",
       "startTime": null,
-      "endTime": null,
+      "endTime": 1748522321000,
+      "duration": 72,
       "notBefore": null,
       "round": "R2",
       "score": {
@@ -797,8 +905,14 @@
           "away": "0"
         },
         "sets": {
-          "home": [],
-          "away": []
+          "home": [
+            1,
+            3
+          ],
+          "away": [
+            6,
+            6
+          ]
         }
       }
     },
@@ -822,19 +936,24 @@
       ],
       "seedA": null,
       "seedB": null,
-      "status": "not_started",
+      "status": "in_progress",
       "startTime": null,
       "endTime": null,
+      "duration": 41,
       "notBefore": null,
       "round": "R2",
       "score": {
         "current": {
-          "home": "0",
-          "away": "0"
+          "home": "40",
+          "away": "40"
         },
         "sets": {
-          "home": [],
-          "away": []
+          "home": [
+            4
+          ],
+          "away": [
+            3
+          ]
         }
       }
     },
@@ -861,6 +980,7 @@
       "status": "not_started",
       "startTime": null,
       "endTime": null,
+      "duration": 0,
       "notBefore": null,
       "round": "R2",
       "score": {
@@ -904,9 +1024,10 @@
       ],
       "seedA": 11,
       "seedB": null,
-      "status": "not_started",
+      "status": "finished",
       "startTime": null,
-      "endTime": null,
+      "endTime": 1748518063000,
+      "duration": 135,
       "notBefore": null,
       "round": "R1",
       "score": {
@@ -915,8 +1036,16 @@
           "away": "0"
         },
         "sets": {
-          "home": [],
-          "away": []
+          "home": [
+            4,
+            6,
+            4
+          ],
+          "away": [
+            6,
+            4,
+            6
+          ]
         }
       }
     },
@@ -948,19 +1077,26 @@
       ],
       "seedA": 10,
       "seedB": null,
-      "status": "not_started",
+      "status": "in_progress",
       "startTime": null,
       "endTime": null,
+      "duration": 103,
       "notBefore": null,
       "round": "R1",
       "score": {
         "current": {
-          "home": "0",
-          "away": "0"
+          "home": "15",
+          "away": "30"
         },
         "sets": {
-          "home": [],
-          "away": []
+          "home": [
+            6,
+            5
+          ],
+          "away": [
+            7,
+            4
+          ]
         }
       }
     },
@@ -995,6 +1131,7 @@
       "status": "not_started",
       "startTime": null,
       "endTime": null,
+      "duration": 0,
       "notBefore": null,
       "round": "R1",
       "score": {
@@ -1039,6 +1176,7 @@
       "status": "not_started",
       "startTime": null,
       "endTime": null,
+      "duration": 0,
       "notBefore": null,
       "round": "R1",
       "score": {
@@ -1082,9 +1220,10 @@
       ],
       "seedA": 3,
       "seedB": null,
-      "status": "not_started",
+      "status": "finished",
       "startTime": null,
-      "endTime": null,
+      "endTime": 1748514458000,
+      "duration": 73,
       "notBefore": null,
       "round": "R1",
       "score": {
@@ -1093,8 +1232,14 @@
           "away": "0"
         },
         "sets": {
-          "home": [],
-          "away": []
+          "home": [
+            6,
+            6
+          ],
+          "away": [
+            3,
+            3
+          ]
         }
       }
     },
@@ -1126,19 +1271,28 @@
       ],
       "seedA": null,
       "seedB": 16,
-      "status": "not_started",
+      "status": "in_progress",
       "startTime": null,
       "endTime": null,
+      "duration": 171,
       "notBefore": null,
       "round": "R1",
       "score": {
         "current": {
-          "home": "0",
-          "away": "0"
+          "home": "15",
+          "away": "40"
         },
         "sets": {
-          "home": [],
-          "away": []
+          "home": [
+            7,
+            6,
+            2
+          ],
+          "away": [
+            6,
+            7,
+            2
+          ]
         }
       }
     },
@@ -1173,6 +1327,7 @@
       "status": "not_started",
       "startTime": null,
       "endTime": null,
+      "duration": 0,
       "notBefore": null,
       "round": "R1",
       "score": {
@@ -1216,9 +1371,10 @@
       ],
       "seedA": null,
       "seedB": 14,
-      "status": "not_started",
+      "status": "finished",
       "startTime": null,
-      "endTime": null,
+      "endTime": 1748515505000,
+      "duration": 93,
       "notBefore": null,
       "round": "R1",
       "score": {
@@ -1227,8 +1383,14 @@
           "away": "0"
         },
         "sets": {
-          "home": [],
-          "away": []
+          "home": [
+            6,
+            6
+          ],
+          "away": [
+            4,
+            4
+          ]
         }
       }
     },
@@ -1260,9 +1422,10 @@
       ],
       "seedA": null,
       "seedB": 2,
-      "status": "not_started",
+      "status": "finished",
       "startTime": null,
-      "endTime": null,
+      "endTime": 1748520797000,
+      "duration": 70,
       "notBefore": null,
       "round": "R1",
       "score": {
@@ -1271,8 +1434,14 @@
           "away": "0"
         },
         "sets": {
-          "home": [],
-          "away": []
+          "home": [
+            3,
+            4
+          ],
+          "away": [
+            6,
+            6
+          ]
         }
       }
     },
@@ -1281,7 +1450,7 @@
       "court": "Court 5",
       "typeLabel": "Women’s Doubles",
       "home": "S. HSIEH / J. OSTAPENKO",
-      "away": "M. BOUZKOVA / M. VONDROUSOVA",
+      "away": "A. BONDAR / G. MINNEN",
       "playersA": [
         {
           "name": "S. HSIEH",
@@ -1294,29 +1463,36 @@
       ],
       "playersB": [
         {
-          "name": "M. BOUZKOVA",
-          "country": "CZE"
+          "name": "A. BONDAR",
+          "country": "HUN"
         },
         {
-          "name": "M. VONDROUSOVA",
-          "country": "CZE"
+          "name": "G. MINNEN",
+          "country": "BEL"
         }
       ],
       "seedA": 3,
       "seedB": null,
-      "status": "not_started",
+      "status": "in_progress",
       "startTime": null,
       "endTime": null,
+      "duration": 65,
       "notBefore": null,
       "round": "R1",
       "score": {
         "current": {
-          "home": "0",
-          "away": "0"
+          "home": "40",
+          "away": "40"
         },
         "sets": {
-          "home": [],
-          "away": []
+          "home": [
+            6,
+            2
+          ],
+          "away": [
+            3,
+            2
+          ]
         }
       }
     },
@@ -1351,7 +1527,8 @@
       "status": "not_started",
       "startTime": null,
       "endTime": null,
-      "notBefore": null,
+      "duration": 0,
+      "notBefore": "16:00",
       "round": "R1",
       "score": {
         "current": {
@@ -1394,9 +1571,10 @@
       ],
       "seedA": null,
       "seedB": null,
-      "status": "not_started",
+      "status": "finished",
       "startTime": null,
-      "endTime": null,
+      "endTime": 1748514686000,
+      "duration": 77,
       "notBefore": null,
       "round": "R1",
       "score": {
@@ -1405,8 +1583,14 @@
           "away": "0"
         },
         "sets": {
-          "home": [],
-          "away": []
+          "home": [
+            7,
+            6
+          ],
+          "away": [
+            6,
+            2
+          ]
         }
       }
     },
@@ -1438,9 +1622,10 @@
       ],
       "seedA": null,
       "seedB": null,
-      "status": "not_started",
+      "status": "finished",
       "startTime": null,
-      "endTime": null,
+      "endTime": 1748523773000,
+      "duration": 125,
       "notBefore": null,
       "round": "R1",
       "score": {
@@ -1449,8 +1634,16 @@
           "away": "0"
         },
         "sets": {
-          "home": [],
-          "away": []
+          "home": [
+            6,
+            3,
+            6
+          ],
+          "away": [
+            4,
+            6,
+            3
+          ]
         }
       }
     },
@@ -1482,9 +1675,10 @@
       ],
       "seedA": null,
       "seedB": 2,
-      "status": "not_started",
+      "status": "in_progress",
       "startTime": null,
       "endTime": null,
+      "duration": 15,
       "notBefore": null,
       "round": "R1",
       "score": {
@@ -1493,8 +1687,12 @@
           "away": "0"
         },
         "sets": {
-          "home": [],
-          "away": []
+          "home": [
+            2
+          ],
+          "away": [
+            3
+          ]
         }
       }
     },
@@ -1529,6 +1727,7 @@
       "status": "not_started",
       "startTime": null,
       "endTime": null,
+      "duration": 0,
       "notBefore": null,
       "round": "R1",
       "score": {
@@ -1572,9 +1771,10 @@
       ],
       "seedA": null,
       "seedB": null,
-      "status": "not_started",
+      "status": "finished",
       "startTime": null,
-      "endTime": null,
+      "endTime": 1748513346000,
+      "duration": 58,
       "notBefore": null,
       "round": "R1",
       "score": {
@@ -1583,8 +1783,14 @@
           "away": "0"
         },
         "sets": {
-          "home": [],
-          "away": []
+          "home": [
+            3,
+            1
+          ],
+          "away": [
+            6,
+            6
+          ]
         }
       }
     },
@@ -1608,9 +1814,10 @@
       ],
       "seedA": null,
       "seedB": null,
-      "status": "not_started",
+      "status": "finished",
       "startTime": null,
-      "endTime": null,
+      "endTime": 1748519499000,
+      "duration": 86,
       "notBefore": null,
       "round": "R2",
       "score": {
@@ -1619,8 +1826,14 @@
           "away": "0"
         },
         "sets": {
-          "home": [],
-          "away": []
+          "home": [
+            6,
+            6
+          ],
+          "away": [
+            3,
+            2
+          ]
         }
       }
     },
@@ -1644,19 +1857,26 @@
       ],
       "seedA": null,
       "seedB": null,
-      "status": "not_started",
+      "status": "in_progress",
       "startTime": null,
       "endTime": null,
+      "duration": 84,
       "notBefore": null,
       "round": "R2",
       "score": {
         "current": {
-          "home": "0",
-          "away": "0"
+          "home": "40",
+          "away": "40"
         },
         "sets": {
-          "home": [],
-          "away": []
+          "home": [
+            5,
+            4
+          ],
+          "away": [
+            7,
+            4
+          ]
         }
       }
     },
@@ -1691,6 +1911,7 @@
       "status": "not_started",
       "startTime": null,
       "endTime": null,
+      "duration": 0,
       "notBefore": null,
       "round": "R1",
       "score": {
@@ -1734,9 +1955,10 @@
       ],
       "seedA": null,
       "seedB": 5,
-      "status": "not_started",
+      "status": "finished",
       "startTime": null,
-      "endTime": null,
+      "endTime": 1748514795000,
+      "duration": 83,
       "notBefore": null,
       "round": "R1",
       "score": {
@@ -1745,8 +1967,14 @@
           "away": "0"
         },
         "sets": {
-          "home": [],
-          "away": []
+          "home": [
+            5,
+            3
+          ],
+          "away": [
+            7,
+            6
+          ]
         }
       }
     },
@@ -1778,9 +2006,10 @@
       ],
       "seedA": null,
       "seedB": 5,
-      "status": "not_started",
+      "status": "finished",
       "startTime": null,
-      "endTime": null,
+      "endTime": 1748521557000,
+      "duration": 95,
       "notBefore": null,
       "round": "R1",
       "score": {
@@ -1789,8 +2018,16 @@
           "away": "0"
         },
         "sets": {
-          "home": [],
-          "away": []
+          "home": [
+            6,
+            2,
+            0
+          ],
+          "away": [
+            3,
+            6,
+            6
+          ]
         }
       }
     },
@@ -1822,19 +2059,26 @@
       ],
       "seedA": null,
       "seedB": 12,
-      "status": "not_started",
+      "status": "in_progress",
       "startTime": null,
       "endTime": null,
+      "duration": 55,
       "notBefore": null,
       "round": "R1",
       "score": {
         "current": {
           "home": "0",
-          "away": "0"
+          "away": "40"
         },
         "sets": {
-          "home": [],
-          "away": []
+          "home": [
+            4,
+            3
+          ],
+          "away": [
+            6,
+            2
+          ]
         }
       }
     },
@@ -1869,7 +2113,8 @@
       "status": "not_started",
       "startTime": null,
       "endTime": null,
-      "notBefore": null,
+      "duration": 0,
+      "notBefore": "16:00",
       "round": "R1",
       "score": {
         "current": {
@@ -1904,9 +2149,10 @@
       ],
       "seedA": null,
       "seedB": null,
-      "status": "not_started",
+      "status": "finished",
       "startTime": null,
-      "endTime": null,
+      "endTime": 1748515897000,
+      "duration": 98,
       "notBefore": null,
       "round": "R2",
       "score": {
@@ -1915,8 +2161,14 @@
           "away": "0"
         },
         "sets": {
-          "home": [],
-          "away": []
+          "home": [
+            6,
+            6
+          ],
+          "away": [
+            1,
+            4
+          ]
         }
       }
     },
@@ -1948,9 +2200,10 @@
       ],
       "seedA": null,
       "seedB": null,
-      "status": "not_started",
+      "status": "finished",
       "startTime": null,
-      "endTime": null,
+      "endTime": 1748522381000,
+      "duration": 91,
       "notBefore": null,
       "round": "R1",
       "score": {
@@ -1959,8 +2212,14 @@
           "away": "0"
         },
         "sets": {
-          "home": [],
-          "away": []
+          "home": [
+            6,
+            6
+          ],
+          "away": [
+            3,
+            4
+          ]
         }
       }
     },
@@ -1992,9 +2251,10 @@
       ],
       "seedA": null,
       "seedB": null,
-      "status": "not_started",
+      "status": "in_progress",
       "startTime": null,
       "endTime": null,
+      "duration": 42,
       "notBefore": null,
       "round": "R1",
       "score": {
@@ -2003,8 +2263,14 @@
           "away": "0"
         },
         "sets": {
-          "home": [],
-          "away": []
+          "home": [
+            2,
+            2
+          ],
+          "away": [
+            6,
+            1
+          ]
         }
       }
     },
@@ -2039,6 +2305,7 @@
       "status": "not_started",
       "startTime": null,
       "endTime": null,
+      "duration": 0,
       "notBefore": null,
       "round": "R1",
       "score": {
@@ -2082,9 +2349,10 @@
       ],
       "seedA": 15,
       "seedB": null,
-      "status": "not_started",
+      "status": "finished",
       "startTime": null,
-      "endTime": null,
+      "endTime": 1748517754000,
+      "duration": 132,
       "notBefore": null,
       "round": "R1",
       "score": {
@@ -2093,8 +2361,16 @@
           "away": "0"
         },
         "sets": {
-          "home": [],
-          "away": []
+          "home": [
+            3,
+            6,
+            7
+          ],
+          "away": [
+            6,
+            3,
+            6
+          ]
         }
       }
     },
@@ -2118,9 +2394,10 @@
       ],
       "seedA": null,
       "seedB": null,
-      "status": "not_started",
+      "status": "in_progress",
       "startTime": null,
       "endTime": null,
+      "duration": 120,
       "notBefore": null,
       "round": "R2",
       "score": {
@@ -2129,8 +2406,16 @@
           "away": "0"
         },
         "sets": {
-          "home": [],
-          "away": []
+          "home": [
+            4,
+            6,
+            5
+          ],
+          "away": [
+            6,
+            4,
+            5
+          ]
         }
       }
     },
@@ -2157,6 +2442,7 @@
       "status": "not_started",
       "startTime": null,
       "endTime": null,
+      "duration": 0,
       "notBefore": null,
       "round": "R2",
       "score": {
@@ -2201,6 +2487,7 @@
       "status": "not_started",
       "startTime": null,
       "endTime": null,
+      "duration": 0,
       "notBefore": null,
       "round": "R1",
       "score": {
@@ -2236,9 +2523,10 @@
       ],
       "seedA": null,
       "seedB": 26,
-      "status": "not_started",
+      "status": "finished",
       "startTime": null,
-      "endTime": null,
+      "endTime": 1748518149000,
+      "duration": 139,
       "notBefore": null,
       "round": "R2",
       "score": {
@@ -2247,8 +2535,18 @@
           "away": "0"
         },
         "sets": {
-          "home": [],
-          "away": []
+          "home": [
+            6,
+            3,
+            6,
+            6
+          ],
+          "away": [
+            3,
+            6,
+            1,
+            2
+          ]
         }
       }
     },
@@ -2272,19 +2570,26 @@
       ],
       "seedA": null,
       "seedB": 32,
-      "status": "not_started",
+      "status": "in_progress",
       "startTime": null,
       "endTime": null,
+      "duration": 110,
       "notBefore": null,
       "round": "R2",
       "score": {
         "current": {
-          "home": "0",
-          "away": "0"
+          "home": "40",
+          "away": "A"
         },
         "sets": {
-          "home": [],
-          "away": []
+          "home": [
+            6,
+            3
+          ],
+          "away": [
+            7,
+            4
+          ]
         }
       }
     },
@@ -2311,6 +2616,7 @@
       "status": "not_started",
       "startTime": null,
       "endTime": null,
+      "duration": 0,
       "notBefore": null,
       "round": "R2",
       "score": {
@@ -2355,6 +2661,7 @@
       "status": "not_started",
       "startTime": null,
       "endTime": null,
+      "duration": 0,
       "notBefore": null,
       "round": "R1",
       "score": {
@@ -2401,6 +2708,7 @@
       "status": "not_started",
       "startTime": null,
       "endTime": null,
+      "duration": 0,
       "notBefore": null,
       "round": "R1",
       "score": {
