@@ -1,0 +1,19 @@
+{
+  "name": "roland-garros-schedule",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Backend server to fetch and serve Roland Garros match schedule",
+  "main": "server.mjs",
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node server-test.mjs"
+  },
+  "keywords": ["tennis", "roland-garros", "live", "schedule", "express"],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "node-fetch": "^3.3.2"
+  }
+}

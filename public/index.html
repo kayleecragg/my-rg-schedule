@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CHECKERBOARD</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+    /* Base styles */
+    :root {
+      --border-radius: 8px;
+      --button: #2a2a2a;
+      --button-box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      --switcher-padding: 4px;
+      --secondary: #4a4a8a;
+    }
+
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: 'Lato', sans-serif;
+      min-height: 100vh;
+      transition: background 0.3s, color 0.3s;
+      background-color: #121212;
+      color: #e0e0e0;
+    }
+
+    body.dark {
+      background-color: #121212;
+      color: #e0e0e0;
+    }
+
+    body.dark .match.interrupted {
+      color: #d0aaff; /* light purple for dark mode */
+      font-weight: bold;
+    }
+    
+    body.light {
+      background-color: #f5f5f5;
+      color: #111;
+    }
+
+    body.light .match.interrupted {
+      color: #6b2fb3; /* dark purple for light mode */
+      font-weight: bold;
+    }
+
+    body.dark .back-button svg {
+      stroke: #ccc;
+    }
+    
+    body.light .back-button svg {
+      stroke: #333;
+    }
+
+    /* Font classes */
+    body.font-lato {
+      font-family: 'Lato', sans-serif;
+    }
+    
+    body.font-monospace {
+      font-family: 'IBM Plex Mono', 'Noto Sans Mono', monospace;
+    }
+
+    /* Settings panel styles */
+    #settings-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.7);
+      z-index: 10000;
+      overflow-y: auto;
+    }
+    
+    .settings-content {
+      max-width: 600px;
+      margin: 30px auto;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.3);
+      background: #1f1f1f;
+      color: #e0e0e0;
+    }
+    
+    body.light .settings-content {
+      background: #fff;
+      color: #111;
+    }
+    
+    .settings-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #444;
+    }
+    
+    body.light .settings-header {
+      border-color: #ddd;
+    }
+    
+    .close-settings {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #888;
+    }
+    
+    .close-settings:hover {
+      color: #fff;
+    }
+    
+    .settings-section {
+      margin-bottom: 30px;
+    }
+    
+    .settings-section h3 {
+      margin-bottom: 15px;
+      font-size: 1.3rem;
+    }
+    
+    /* Custom switcher styles */
+    .switcher-parent {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    
+    .switcher {
+      display: flex;
+      width: auto;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      scrollbar-width: none;
+      overflow-x: scroll;
+      border-radius: var(--border-radius);
+      background: var(--button);
+      box-shadow: var(--button-box-shadow);
+      padding: var(--switcher-padding);
+      gap: calc(var(--switcher-padding) - 1.5px);
+    }
+    
+    .switcher .button {
+      white-space: nowrap;
+      flex: 1;
+      padding: 10px 15px;
+      border-radius: calc(var(--border-radius) - var(--switcher-padding));
+      border: none;
+      background: transparent;
+      color: #e0e0e0;
+      cursor: pointer;
+      transition: all 0.2s;
+      height: calc(40px - var(--switcher-padding) * 1.5);
+    }
+    
+    .switcher .button.active {
+      background: var(--secondary);
+      pointer-events: none;
+    }
+    
+    .switcher .button.active:hover {
+      background: var(--secondary);
+    }
+    
+    .switcher .button:not(.active):hover {
+      background: rgba(255,255,255,0.1);
+    }
+    
+    body.light .switcher {
+      background: #f9f9f9;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    
+    body.light .switcher .button {
+      color: #111;
+    }
+    
+    body.light .switcher .button.active {
+      background: #d0d0ff;
+    }
+    
+    .settings-description {
+      font-size: 0.9rem;
+      color: #aaa;
+      margin-top: 5px;
+    }
+    
+    body.light .settings-description {
+      color: #666;
+    }
+    
+    /* Fixed header centering */
+    .header-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    
+    .header-buttons {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+    }
+    
+    .header-buttons button {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 15px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s;
+      background-color: #1f1f1f;
+      color: #e0e0e0;
+      border: 1px solid #444;
+    }
+    
+    body.light .header-buttons button {
+      background-color: #fff;
+      color: #111;
+      border: 1px solid #aaa;
+    }
+    
+    .settings-button svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    /* Rest of existing styles... */
+    h1 {
+      text-align: center;
+      font-weight: bold;
+      font-size: 2.5em;
+      letter-spacing: 1px;
+      margin: 0;
+      padding: 10px 0;
+    }
+
+    #offline-message h1 {
+      text-align: center;
+      font-weight: bold;
+      font-size: 2.5em;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    button, input, select, textarea {
+      font-family: inherit;
+      padding: 6px 10px;
+      border-radius: 6px;
+      margin: 5px;
+      transition: background 0.2s, color 0.2s, border 0.2s;
+    }
+
+    body.dark button, body.dark input, body.dark select, body.dark textarea {
+      background-color: #1f1f1f;
+      color: #e0e0e0;
+      border: 1px solid #444;
+    }
+
+    body.light button, body.light input, body.light select, body.light textarea {
+      background-color: #fff;
+      color: #111;
+      border: 1px solid #aaa;
+    }
+
+    body.light .match.live {
+      color: #006400; /* Darker green */
+    }
+    
+    body.light .match.upcoming {
+      color: darkorange; 
+    }
+    
+    body.light .match.finished {
+      color: #ff4c4c; 
+    }
+
+    #court-selector {
+      margin-bottom: 30px;
+    }
+
+    #court-selector h3 {
+      margin-bottom: 10px;
+    }
+
+    label {
+      margin-right: 12px;
+      font-size: 0.9em;
+    }
+
+    .not-before {
+      float: right;
+      font-size: 0.85em;
+      padding: 2px 6px;
+      border-radius: 6px;
+      font-weight: bold;
+      background: #333;
+      color: #ffdd57;
+    }
+
+    body.light .not-before {
+      background: #eee;
+      color: #a66c00;
+    }
+
+    #schedule {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .court {
+      border-radius: 12px;
+      padding: 16px;
+      flex: 1 1 300px;
+      transition: transform 0.3s ease;
+      background-color: #1f1f1f;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+    }
+
+    body.light .court {
+      background-color: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      border: 1px solid #ccc;
+    }
+
+    .court.flash {
+      animation: flash-bg 1s ease-in-out;
+    }
+
+    @keyframes flash-bg {
+      0% { background: #3c3c00; }
+      100% { background: inherit; }
+    }
+
+    .court h2 {
+      margin: 0 0 12px 0;
+      font-size: 1.1em;
+      border-bottom: 1px solid #444;
+      padding-bottom: 6px;
+    }
+
+    body.light .court h2 {
+      border-color: #ccc;
+    }
+
+    .match {
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 8px;
+      background: #2a2a2a;
+      border: 1px solid #333;
+    }
+
+    body.light .match {
+      background: #f9f9f9;
+      border: 1px solid #ccc;
+    }
+
+    .match.live { color: #00ff8c; font-weight: bold; }
+    .match.upcoming { color: #ffa500; font-weight: bold; }
+    .match.finished { color: #ff4c4c; font-weight: bold; }
+
+    .score {
+      font-size: 0.9em;
+      margin-top: 5px;
+    }
+
+    .score-sets {
+      font-size: 0.85em;
+      color: #999;
+    }
+
+    .score-endtime {
+      font-size: 0.8em;
+      color: #bbb;
+      margin-top: 4px;
+    }
+
+    .next-day {
+      display: inline-block;
+      background: #ffa500;
+      color: #121212;
+      font-size: 0.75em;
+      font-weight: bold;
+      padding: 2px 6px;
+      border-radius: 6px;
+      margin-left: 6px;
+    }
+
+    .type-label {
+      font-size: 0.85em;
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+
+    #notifications {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      font-size: 0.9em;
+      padding: 10px;
+      max-height: 150px;
+      overflow-y: auto;
+      box-shadow: 0 -2px 6px rgba(0,0,0,0.3);
+      z-index: 1000;
+      background: #222;
+      color: #fff;
+    }
+
+    body.light #notifications {
+      background: #eee;
+      color: #111;
+    }
+
+    #popup-notification {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 15px 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      max-width: 300px;
+      z-index: 1100;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 0.9em;
+      background: #333;
+      color: #fff;
+    }
+
+    body.light #popup-notification {
+      background: #fff;
+      color: #111;
+    }
+
+    #popup-notification span#popup-close {
+      position: absolute;
+      top: 6px;
+      right: 10px;
+      cursor: pointer;
+      font-size: 18px;
+      color: #bbb;
+    }
+
+    #popup-notification.popup-hidden {
+      display: none;
+    }
+
+    #offline-message {
+      position: fixed;
+      inset: 0;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      z-index: 2000;
+      background-color: #121212;
+      color: white;
+      font-family: 'IBM Plex Mono', 'Noto Sans Mono Variable', monospace;
+    }
+  
+/*     .back-container {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
+  
+    .back-button {
+      padding: 8px;
+      border-radius: 100%;
+      border: none;
+      background: none;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+  
+    .back-button:hover {
+      transform: scale(1.1);
+    }
+  
+    .back-button svg {
+      width: 24px;
+      height: 24px;
+      stroke-width: 2px;
+      stroke: #ccc;
+      fill: none;
+    } */
+  
+    #offline-message img.logo {
+      max-width: 200px;
+      margin-bottom: 2rem;
+    }
+  
+    #offline-message h1 {
+      font-size: 2rem;
+      margin: 0.5rem 0;
+    }
+  
+    #offline-message p {
+      margin-top: 1rem;
+      font-size: 1rem;
+    }
+    
+    /* NEW: Score table styles */
+    .score-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 0.85em;
+    }
+    
+    .score-table td {
+      padding: 4px 6px;
+      text-align: center;
+    }
+    
+    .score-table .player-name {
+      text-align: left;
+      padding-left: 0;
+      width: 45%;
+    }
+    
+    .score-table .set-score {
+      border-right: 1px solid #666;
+      min-width: 20px;
+    }
+    
+    body.light .score-table .set-score {
+      border-right: 1px solid #ccc;
+    }
+    
+    .score-table .current-game {
+      font-weight: bold;
+      background: rgba(255,255,255,0.1);
+      border-radius: 4px;
+    }
+    
+    body.light .score-table .current-game {
+      background: rgba(0,0,0,0.05);
+    }
+    
+    .score-header {
+      font-size: 0.8em;
+      color: #999;
+      text-align: center;
+      margin-top: 10px;
+      margin-bottom: 4px;
+      font-weight: bold;
+    }
+    
+    .seed {
+      font-size: 0.8em;
+      color: #999;
+      margin-left: 4px;
+    }
+
+    /* Remove border from last set column when no current game */
+    .score-table.no-current-game .set-score:last-child {
+      border-right: none;
+    }
+</style>
+</head>
+<body class="dark font-lato">
+  <div id="main-content">
+    <div class="header-container">
+      <h1>checkerboard</h1>
+      <div class="header-buttons">
+        <button id="settings-button" class="settings-button">
+          <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z"></path>
+            <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"></path>
+          </svg>
+          Settings
+        </button>
+      </div>
+    </div>
+    
+    <div id="court-selector"></div>
+    <div id="schedule">Loading…</div>
+    <div id="notifications"></div>
+  </div>
+  
+  <!-- Settings Modal -->
+  <div id="settings-modal">
+    <div class="settings-content">
+      <div class="settings-header">
+        <h2>Settings</h2>
+        <button class="close-settings" aria-label="Close settings">&times;</button>
+      </div>
+      
+      <!-- Theme Settings -->
+      <div class="settings-section">
+        <h3>Theme</h3>
+        <div class="switcher-parent">
+          <div class="switcher big">
+            <button data-theme="dark" class="button">dark</button>
+            <button data-theme="light" class="button">light</button>
+            <button data-theme="auto" class="button">auto</button>
+          </div>
+          <div class="settings-description">auto theme switches based on your device's display mode</div>
+        </div>
+      </div>
+      
+      <!-- Font Settings -->
+      <div class="settings-section">
+        <h3>Font</h3>
+        <div class="switcher-parent">
+          <div class="switcher big">
+            <button data-font="lato" class="button">lato</button>
+            <button data-font="monospace" class="button">monospace</button>
+          </div>
+          <div class="settings-description">choose between sans-serif and monospace fonts</div>
+        </div>
+      </div>
+      
+      <!-- Settings Status -->
+      <div class="settings-section">
+        <div class="settings-description" id="settings-status">settings are saved in your browser's local storage</div>
+      </div>
+    </div>
+  </div>
+  
+  <div id="popup-notification" class="popup-hidden">
+    <span id="popup-close">&times;</span>
+    <div id="popup-content"></div>
+  </div>
+<!--   <div class="back-container">
+    <a href="https://kayleecragg.github.io/tennis/checkerboard" class="back-button" aria-label="Go back">
+      <svg viewBox="0 0 24 24">
+        <path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div> -->
+  <div id="offline-message">
+    <img src="assets/aaa.gif" alt="aaa" class="logo">
+    <h1>checkerboard offline.</h1>
+    <p>contact kaylee (reasons: wifi down, kaylee's laptop is shut, or blame blake)</p>
+  </div>
+
+
+  <script>
+    // Settings functionality
+    const settingsModal = document.getElementById('settings-modal');
+    const settingsButton = document.getElementById('settings-button');
+    const closeSettings = document.querySelector('.close-settings');
+    const themeButtons = document.querySelectorAll('[data-theme]');
+    const fontButtons = document.querySelectorAll('[data-font]');
+    const body = document.body;
+    const settingsStatus = document.getElementById('settings-status');
+    
+    // Load saved settings
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    const savedFont = localStorage.getItem('font') || 'lato';
+    
+    // Apply saved settings
+    body.classList.remove('light', 'dark', 'font-lato', 'font-monospace');
+    body.classList.add(savedTheme, `font-${savedFont}`);
+    
+    // Update active buttons
+    document.querySelector(`[data-theme="${savedTheme}"]`).classList.add('active');
+    document.querySelector(`[data-font="${savedFont}"]`).classList.add('active');
+    
+    // Toggle settings modal
+    settingsButton.addEventListener('click', () => {
+      settingsModal.style.display = 'block';
+    });
+    
+    closeSettings.addEventListener('click', () => {
+      settingsModal.style.display = 'none';
+    });
+    
+    // Close modal when clicking outside content
+    window.addEventListener('click', (e) => {
+      if (e.target === settingsModal) {
+        settingsModal.style.display = 'none';
+      }
+    });
+    
+    // Theme selection
+    themeButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const theme = button.dataset.theme;
+        
+        // Remove active class from all buttons
+        themeButtons.forEach(btn => btn.classList.remove('active'));
+        // Add active class to clicked button
+        button.classList.add('active');
+        
+        // Remove existing theme classes
+        body.classList.remove('light', 'dark');
+        
+        // Handle auto theme
+        if (theme === 'auto') {
+          const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          body.classList.add(systemPrefersDark ? 'dark' : 'light');
+        } else {
+          body.classList.add(theme);
+        }
+        
+        // Save to localStorage
+        localStorage.setItem('theme', theme);
+        
+        // Show confirmation
+        showSettingsStatus(`theme set to ${theme} mode`);
+      });
+    });
+    
+    // Font selection
+    fontButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const font = button.dataset.font;
+        
+        // Remove active class from all buttons
+        fontButtons.forEach(btn => btn.classList.remove('active'));
+        // Add active class to clicked button
+        button.classList.add('active');
+        
+        // Remove existing font classes
+        body.classList.remove('font-lato', 'font-monospace');
+        // Add selected font class
+        body.classList.add(`font-${font}`);
+        
+        // Save to localStorage
+        localStorage.setItem('font', font);
+        
+        // Show confirmation
+        showSettingsStatus(`Font set to ${font}`);
+      });
+    });
+    
+    function showSettingsStatus(message) {
+      settingsStatus.textContent = `${message} - saved to browser storage`;
+      settingsStatus.style.color = '#4CAF50';
+      setTimeout(() => {
+        settingsStatus.textContent = "settings are saved in your browser's local storage";
+        settingsStatus.style.color = '';
+      }, 3000);
+    }
+
+    // Court rendering logic
+    const API_BASE = "https://tennis.ngrok.app/schedule.json";
+    const savedCourts = localStorage.getItem('selectedCourts');
+    let selectedCourts = new Set(savedCourts ? JSON.parse(savedCourts) : []);
+    const isFirstLoad = !savedCourts;
+    let lastData = {};
+    let selectorsInitialized = false;
+    const notifications = [];
+
+    function addNotification(message) {
+      const timestamp = Date.now();
+      notifications.push({ message, timestamp });
+      const tenMinutesAgo = timestamp - 15 * 60 * 1000;
+      while (notifications.length && notifications[0].timestamp < tenMinutesAgo) {
+        notifications.shift();
+      }
+      document.getElementById('notifications').innerHTML = notifications
+        .slice(-10)
+        .map(n => `<div>${new Date(n.timestamp).toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})}: ${n.message}</div>`)
+        .join('');
+      showPopup(message);
+    }
+
+    function showPopup(message) {
+      if (!message) return;
+      const popup = document.getElementById('popup-notification');
+      const content = document.getElementById('popup-content');
+      content.innerText = message;
+      popup.classList.remove('popup-hidden');
+    }
+
+    document.getElementById('popup-close').onclick = () => {
+      const popup = document.getElementById('popup-notification');
+      const content = document.getElementById('popup-content');
+      popup.classList.add('popup-hidden');
+      content.innerText = '';
+    };
+
+    function initSelectors(courtNames) {
+      if (isFirstLoad && selectedCourts.size === 0) {
+        selectedCourts = new Set(courtNames);
+        localStorage.setItem('selectedCourts', JSON.stringify(Array.from(selectedCourts)));
+      }
+      const container = document.getElementById('court-selector');
+      container.innerHTML = '<h3>select courts:</h3>' +
+        '<button id="select-all">select all</button>' +
+        '<button id="deselect-all">deselect all</button>';
+
+      document.getElementById('select-all').onclick = () => {
+        selectedCourts = new Set(courtNames);
+        localStorage.setItem('selectedCourts', JSON.stringify(Array.from(selectedCourts)));
+        render(filterData(lastData));
+        initSelectors(courtNames);
+      };
+
+      document.getElementById('deselect-all').onclick = () => {
+        selectedCourts.clear();
+        localStorage.setItem('selectedCourts', JSON.stringify([]));
+        render(filterData(lastData));
+        initSelectors(courtNames);
+      };
+
+      courtNames.forEach(court => {
+        const label = document.createElement('label');
+        const input = document.createElement('input');
+        input.type = 'checkbox';
+        input.value = court;
+        input.checked = selectedCourts.has(court);
+        input.onchange = () => {
+          if (input.checked) selectedCourts.add(court);
+          else selectedCourts.delete(court);
+          localStorage.setItem('selectedCourts', JSON.stringify(Array.from(selectedCourts)));
+          render(filterData(lastData));
+        };
+        label.appendChild(input);
+        label.appendChild(document.createTextNode(' ' + court));
+        container.appendChild(label);
+      });
+
+      selectorsInitialized = true;
+    }
+
+    function filterData(data) {
+      const result = {};
+      for (const court of Object.keys(data)) {
+        if (selectedCourts.has(court)) result[court] = data[court];
+      }
+      return result;
+    }
+
+    function render(courts) {
+      const container = document.getElementById('schedule');
+      container.innerHTML = '';
+      Object.entries(courts).forEach(([court, matches]) => {
+        const div = document.createElement('div');
+        div.className = 'court';
+        div.dataset.court = court;
+        div.innerHTML = `<h2>${court}</h2>`;
+        matches.forEach(m => {
+          const d = document.createElement('div');
+          let statusClass = 'upcoming';
+          if (m.status === 'in_progress') statusClass = 'live';
+          else if (['finished','ended','cancelled'].includes(m.status)) statusClass = 'finished';
+          else if (m.status === 'interrupted') statusClass = 'interrupted';
+          d.className = `match ${statusClass}`;
+          let txt = '';
+          if (m.status === 'not_started' && m.notBefore) {
+            const aestTime = convertParisTimeToAEST(m.notBefore);
+            txt += `<div class="not-before">Not before ${aestTime} AEST</div>`;
+          }
+          if (m.typeLabel) {
+            const roundText = m.round ? `<span style="color:#999;font-weight:normal"> (${m.round})</span>` : '';
+            txt += `<div class="type-label">${m.typeLabel}${roundText}</div>`;
+          }
+          
+          // Format team with seed
+          const formatTeam = (team, seed) => {
+            return team.split(' / ').map(name => {
+              return `${name}${seed ? `<span class="seed">(${seed})</span>` : ''}`;
+            }).join(' / ');
+          };
+          
+          if (m.score) {
+            // Determine if we should hide current game
+            const hideCurrentGame = ['finished', 'ended'].includes(m.status);
+            const tableClass = hideCurrentGame ? "score-table no-current-game" : "score-table";
+            
+            txt += `<table class="${tableClass}">`;
+            
+            // Home player row
+            txt += `<tr>`;
+            txt += `<td class="player-name">${formatTeam(m.home, m.seedA)}</td>`;
+            m.score.sets.home.forEach(score => {
+              txt += `<td class="set-score">${score}</td>`;
+            });
+            // Only show current game if match isn't finished/ended
+            if (!hideCurrentGame) {
+              txt += `<td class="current-game">${m.score.current.home}</td>`;
+            }
+            txt += `</tr>`;
+            
+            // Away player row
+            txt += `<tr>`;
+            txt += `<td class="player-name">${formatTeam(m.away, m.seedB)}</td>`;
+            m.score.sets.away.forEach(score => {
+              txt += `<td class="set-score">${score}</td>`;
+            });
+            if (!hideCurrentGame) {
+              txt += `<td class="current-game">${m.score.current.away}</td>`;
+            }
+            txt += `</tr>`;
+            
+            txt += `</table>`;
+          }
+          
+          if (m.status === 'finished' && m.endTime) {
+            const endDate = new Date(m.endTime);
+            const options = { timeZone: 'Australia/Sydney', hour: '2-digit', minute: '2-digit' };
+            const timeStr = endDate.toLocaleTimeString('en-AU', options);
+            txt += `<div class="score-endtime">Ended at: ${timeStr} AEST</div>`;
+          }
+          
+          d.innerHTML = txt;
+          div.appendChild(d);
+        });
+        container.appendChild(div);
+      });
+    }
+
+    async function checkForUpdate() {
+      try {
+        const res = await fetch(API_BASE, { cache: 'no-store' });
+        const data = await res.json();
+        const changed = new Set();
+        const oldById = {};
+        Object.entries(lastData).forEach(([c, ms]) => ms.forEach(m => oldById[m.id] = { ...m, court: c }));
+        Object.entries(data).forEach(([c, ms]) => ms.forEach(m => {
+          const p = oldById[m.id];
+          if (!p) changed.add(c);
+          else {
+            if (p.court !== c) {
+              changed.add(p.court);
+              changed.add(c);
+              addNotification(`Match ${p.home} vs ${p.away} moved from ${p.court} to ${c}`);
+            }
+            if (p.home !== m.home || p.away !== m.away) {
+              changed.add(c);
+              addNotification(`Player change on ${c}: was ${p.home} vs ${p.away}, now ${m.home} vs ${m.away}`);
+            }
+          }
+        }));
+        const newIds = new Set(Object.values(data).flat().map(m => m.id));
+        Object.entries(lastData).forEach(([c, ms]) => ms.forEach(m => { if (!newIds.has(m.id)) changed.add(c); }));
+        lastData = data;
+        if (!selectorsInitialized) initSelectors(Object.keys(data));
+        render(filterData(data));
+        changed.forEach(c => {
+          const el = document.querySelector(`.court[data-court="${c}"]`);
+          if (el) {
+            el.classList.add('flash');
+            setTimeout(() => el.classList.remove('flash'), 1500);
+          }
+        });
+      } catch (err) {
+        console.error(err);
+        document.getElementById('main-content').style.display = 'none';
+        document.getElementById('offline-message').style.display = 'flex';
+      }
+    }
+
+    function isParisTomorrow(unixSeconds) {
+      const fmt = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Paris', year: 'numeric', month: '2-digit', day: '2-digit' });
+      const [ty, tm, td] = fmt.format(new Date()).split('-').map(Number);
+      const [my, mm, md] = fmt.format(new Date(unixSeconds * 1000)).split('-').map(Number);
+      const today = new Date(ty, tm - 1, td);
+      const match = new Date(my, mm - 1, md);
+      return (match - today) / (1000 * 60 * 60 * 24) === 1;
+    }
+
+    function convertParisTimeToAEST(parisTimeStr) {
+      const [hour, minute] = parisTimeStr.split(':').map(Number);
+      const parisNow = new Date();
+      const parisDateStr = new Intl.DateTimeFormat('en-CA', {
+        timeZone: 'Europe/Paris',
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit'
+      }).format(parisNow);
+      const parisDateTimeISO = `${parisDateStr}T${String(hour).padStart(2, '0')}:${String(minute).padStart(2, '0')}:00`;
+      const dateInParis = new Date(`${parisDateTimeISO}+02:00`);
+      return dateInParis.toLocaleTimeString('en-AU', {
+        timeZone: 'Australia/Sydney',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false
+      });
+    }
+
+    checkForUpdate();
+    setInterval(checkForUpdate, 4000);
+  </script>
+</body>
+</html>

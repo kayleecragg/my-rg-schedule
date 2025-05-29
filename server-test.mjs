@@ -1,0 +1,42 @@
+// server-test.mjs
+import express from 'express';
+import path from 'path';
+import cors from 'cors';
+
+////////////////////////////////////////////////////////////////////////////////
+// CONFIGURATION
+////////////////////////////////////////////////////////////////////////////////
+
+const PORT = 3000;
+
+// CORS whitelist
+const whitelist = [
+  'http://localhost:3000',
+  'https://kayleecragg.github.io',
+  'https://tennis.ngrok.app/'
+];
+
+////////////////////////////////////////////////////////////////////////////////
+// EXPRESS SETUP
+////////////////////////////////////////////////////////////////////////////////
+
+const app = express();
+
+app.use(cors({
+  origin: (origin, callback) => {
+    if (!origin) return callback(null, true);
+    callback(null, whitelist.includes(origin));
+  }
+}));
+
+// Serve static files from the 'public' directory (including schedule.json)
+app.use(express.static('public'));
+
+////////////////////////////////////////////////////////////////////////////////
+// START SERVER
+////////////////////////////////////////////////////////////////////////////////
+
+app.listen(PORT, () => {
+  console.log(`Test server running at http://localhost:${PORT}`);
+  console.log(`Serving static schedule.json without updates.`);
+});
