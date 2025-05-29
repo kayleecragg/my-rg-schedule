@@ -103,6 +103,7 @@ function normalizeMatch(match) {
     notBefore: match.matchData.notBefore || null,
     round: roundToShortLabel(match.matchData.roundLabel),
     score,
+    duration: sourceMatch.matchData.durationInMinutes || 0
   };
 }
 
