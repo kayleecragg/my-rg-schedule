@@ -869,18 +869,27 @@
           
           // Status box for in_progress, interrupted, and not_before
           if (m.status === 'in_progress' && m.duration !== undefined) {
-            // Convert duration to MM:SS format
-            const minutes = Math.floor(m.duration / 60);
-            const seconds = m.duration % 60;
-            const durationStr = `${minutes}h ${seconds.toString().padStart(2, '0')}m`;
-            txt += `<div class="status-box">${durationStr}</div>`;
+            // Convert duration to HH:MM format
+            if (m.duration / 60 >= 1) {
+              const hours = Math.floor(m.duration / 60);
+              const minutes = m.duration % 60;
+              const durationStr = `${hours}h ${minutes.toString().padStart(2, '0')}m`;
+              txt += `<div class="status-box">${durationStr}</div>`;
+            }
+            else {
+              const hours = Math.floor(m.duration / 60);
+              const minutes = m.duration % 60;
+              const durationStr = `${minutes.toString().padStart(2, '0')}m`;
+              txt += `<div class="status-box">${durationStr}</div>`;
+            }
+              
           } 
           else if (m.status === 'interrupted') {
             txt += `<div class="status-box">interrupted</div>`;
           }
-          else if (m.status === 'not_started' && m.notBefore) {
-            const aestTime = convertParisTimeToAEST(m.notBefore);
-            txt += `<div class="status-box">Not before ${aestTime} AEST</div>`;
+
+          else if (m.status === 'not_started' && m.notBeforeAEST) {
+            txt += `<div class="status-box">Not before ${m.notBeforeAEST} AEST</div>`;
           }
           
           if (m.typeLabel) {
@@ -990,25 +999,6 @@
       const today = new Date(ty, tm - 1, td);
       const match = new Date(my, mm - 1, md);
       return (match - today) / (1000 * 60 * 60 * 24) === 1;
-    }
-
-    function convertParisTimeToAEST(parisTimeStr) {
-      const [hour, minute] = parisTimeStr.split(':').map(Number);
-      const parisNow = new Date();
-      const parisDateStr = new Intl.DateTimeFormat('en-CA', {
-        timeZone: 'Europe/Paris',
-        year: 'numeric',
-        month: '2-digit',
-        day: '2-digit'
-      }).format(parisNow);
-      const parisDateTimeISO = `${parisDateStr}T${String(hour).padStart(2, '0')}:${String(minute).padStart(2, '0')}:00`;
-      const dateInParis = new Date(`${parisDateTimeISO}+02:00`);
-      return dateInParis.toLocaleTimeString('en-AU', {
-        timeZone: 'Australia/Sydney',
-        hour: '2-digit',
-        minute: '2-digit',
-        hour12: false
-      });
     }
 
     checkForUpdate();

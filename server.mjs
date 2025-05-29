@@ -22,6 +22,44 @@ const whitelist = [
 ];
 
 ////////////////////////////////////////////////////////////////////////////////
+// TIME CONVERSION HELPER
+////////////////////////////////////////////////////////////////////////////////
+
+function convertParisTimeToAEST(parisTimeStr, baseDate = new Date()) {
+  try {
+    // Format baseDate to YYYY-MM-DD in Europe/Paris
+    const formatter = new Intl.DateTimeFormat('en-CA', {
+      timeZone: 'Europe/Paris',
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit'
+    });
+    
+    const formatted = formatter.format(baseDate);
+    const parisDateStr = formatted;
+    const timeString = `${parisDateStr}T${parisTimeStr}:00+02:00`;
+    const dateInParis = new Date(timeString);
+
+    if (isNaN(dateInParis.getTime())) {
+      return null;
+    }
+
+    // Format to Australian time
+    const australiaFormatter = new Intl.DateTimeFormat('en-AU', {
+      timeZone: 'Australia/Sydney',
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false
+    });
+
+    return australiaFormatter.format(dateInParis);
+  } catch (err) {
+    console.error('Error converting time:', err);
+    return null;
+  }
+}
+
+////////////////////////////////////////////////////////////////////////////////
 // EXPRESS SETUP
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -65,7 +103,7 @@ function normalizeStatus(status) {
   return validStatuses.includes(normalized) ? normalized : 'unknown';
 }
 
-function normalizeMatch(match) {
+function normalizeMatch(match, baseDate) {
   const teamAPlayers = match.teamA.players.map(p => ({
     name: `${p.firstName[0]}. ${p.lastName}`,
     country: p.country || null
@@ -102,6 +140,9 @@ function normalizeMatch(match) {
     endTime: match.matchData.endTimestamp || null,
     duration: match.matchData.durationInMinutes || 0,
     notBefore: match.matchData.notBefore || null,
+    notBeforeAEST: match.matchData.notBefore 
+      ? convertParisTimeToAEST(match.matchData.notBefore, baseDate)
+      : null,
     round: roundToShortLabel(match.matchData.roundLabel),
     score
   };
@@ -110,7 +151,8 @@ function normalizeMatch(match) {
 async function updateSchedule() {
   try {
     const data = await fetchPollingData();
-    const matches = (data.matches || []).map(normalizeMatch);
+    const baseDate = new Date(); // Current date for time conversions
+    const matches = (data.matches || []).map(m => normalizeMatch(m, baseDate));
 
     const grouped = matches.reduce((acc, match) => {
       (acc[match.court] ||= []).push(match);
@@ -121,7 +163,7 @@ async function updateSchedule() {
     await fs.writeFile(OUTFILE, JSON.stringify(grouped, null, 2), 'utf8');
     console.log(new Date().toISOString(), 'Updated schedule.json');
   } catch (err) {
-    console.error('❌ Update failed:', err);
+    console.error('Update failed:', err);
   }
 }
 

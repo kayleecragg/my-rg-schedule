@@ -25,6 +25,7 @@
       "endTime": 1748519550000,
       "duration": 103,
       "notBefore": null,
+      "notBeforeAEST": null,
       "round": "R2",
       "score": {
         "current": {
@@ -66,8 +67,9 @@
       "status": "in_progress",
       "startTime": null,
       "endTime": null,
-      "duration": 78,
+      "duration": 91,
       "notBefore": null,
+      "notBeforeAEST": null,
       "round": "R2",
       "score": {
         "current": {
@@ -78,12 +80,12 @@
           "home": [
             6,
             6,
-            0
+            2
           ],
           "away": [
             3,
             0,
-            1
+            2
           ]
         }
       }
@@ -113,6 +115,7 @@
       "endTime": null,
       "duration": 0,
       "notBefore": null,
+      "notBeforeAEST": null,
       "round": "R2",
       "score": {
         "current": {
@@ -150,6 +153,7 @@
       "endTime": null,
       "duration": 0,
       "notBefore": "20:15",
+      "notBeforeAEST": "04:15",
       "round": "R2",
       "score": {
         "current": {
@@ -189,6 +193,7 @@
       "endTime": 1748525746000,
       "duration": 265,
       "notBefore": null,
+      "notBeforeAEST": null,
       "round": "R2",
       "score": {
         "current": {
@@ -238,6 +243,7 @@
       "endTime": null,
       "duration": 0,
       "notBefore": null,
+      "notBeforeAEST": null,
       "round": "R2",
       "score": {
         "current": {
@@ -275,6 +281,7 @@
       "endTime": null,
       "duration": 0,
       "notBefore": null,
+      "notBeforeAEST": null,
       "round": "R2",
       "score": {
         "current": {
@@ -312,6 +319,7 @@
       "endTime": null,
       "duration": 0,
       "notBefore": null,
+      "notBeforeAEST": null,
       "round": "R2",
       "score": {
         "current": {
@@ -351,6 +359,7 @@
       "endTime": 1748514341000,
       "duration": 73,
       "notBefore": null,
+      "notBeforeAEST": null,
       "round": "R2",
       "score": {
         "current": {
@@ -389,15 +398,16 @@
       ],
       "seedA": 3,
       "seedB": null,
-      "status": "interrupted",
+      "status": "in_progress",
       "startTime": null,
       "endTime": null,
-      "duration": 164,
+      "duration": 177,
       "notBefore": null,
+      "notBeforeAEST": null,
       "round": "R2",
       "score": {
         "current": {
-          "home": "0",
+          "home": "40",
           "away": "0"
         },
         "sets": {
@@ -405,13 +415,13 @@
             3,
             6,
             6,
-            4
+            5
           ],
           "away": [
             6,
             1,
             2,
-            1
+            3
           ]
         }
       }
@@ -441,6 +451,7 @@
       "endTime": null,
       "duration": 0,
       "notBefore": null,
+      "notBeforeAEST": null,
       "round": "R2",
       "score": {
         "current": {
@@ -478,6 +489,7 @@
       "endTime": null,
       "duration": 0,
       "notBefore": null,
+      "notBeforeAEST": null,
       "round": "R2",
       "score": {
         "current": {
@@ -517,6 +529,7 @@
       "endTime": 1748520041000,
       "duration": 172,
       "notBefore": null,
+      "notBeforeAEST": null,
       "round": "R2",
       "score": {
         "current": {
@@ -566,6 +579,7 @@
       "endTime": 1748525605000,
       "duration": 74,
       "notBefore": null,
+      "notBeforeAEST": null,
       "round": "R2",
       "score": {
         "current": {
@@ -609,6 +623,7 @@
       "endTime": null,
       "duration": 0,
       "notBefore": null,
+      "notBeforeAEST": null,
       "round": "R2",
       "score": {
         "current": {
@@ -646,6 +661,7 @@
       "endTime": null,
       "duration": 0,
       "notBefore": null,
+      "notBeforeAEST": null,
       "round": "R2",
       "score": {
         "current": {
@@ -685,6 +701,7 @@
       "endTime": 1748521228000,
       "duration": 186,
       "notBefore": null,
+      "notBeforeAEST": null,
       "round": "R2",
       "score": {
         "current": {
@@ -732,22 +749,23 @@
       "status": "in_progress",
       "startTime": null,
       "endTime": null,
-      "duration": 55,
+      "duration": 69,
       "notBefore": null,
+      "notBeforeAEST": null,
       "round": "R2",
       "score": {
         "current": {
-          "home": "0",
-          "away": "0"
+          "home": "40",
+          "away": "40"
         },
         "sets": {
           "home": [
             7,
-            1
+            2
           ],
           "away": [
             6,
-            0
+            1
           ]
         }
       }
@@ -777,6 +795,7 @@
       "endTime": null,
       "duration": 0,
       "notBefore": null,
+      "notBeforeAEST": null,
       "round": "R2",
       "score": {
         "current": {
@@ -814,6 +833,7 @@
       "endTime": null,
       "duration": 0,
       "notBefore": null,
+      "notBeforeAEST": null,
       "round": "R2",
       "score": {
         "current": {
@@ -853,6 +873,7 @@
       "endTime": 1748516957000,
       "duration": 120,
       "notBefore": null,
+      "notBeforeAEST": null,
       "round": "R2",
       "score": {
         "current": {
@@ -898,6 +919,7 @@
       "endTime": 1748522321000,
       "duration": 72,
       "notBefore": null,
+      "notBeforeAEST": null,
       "round": "R2",
       "score": {
         "current": {
@@ -939,20 +961,23 @@
       "status": "in_progress",
       "startTime": null,
       "endTime": null,
-      "duration": 41,
+      "duration": 54,
       "notBefore": null,
+      "notBeforeAEST": null,
       "round": "R2",
       "score": {
         "current": {
-          "home": "40",
-          "away": "40"
+          "home": "30",
+          "away": "0"
         },
         "sets": {
           "home": [
-            4
+            6,
+            0
           ],
           "away": [
-            3
+            3,
+            1
           ]
         }
       }
@@ -982,6 +1007,7 @@
       "endTime": null,
       "duration": 0,
       "notBefore": null,
+      "notBeforeAEST": null,
       "round": "R2",
       "score": {
         "current": {
@@ -1029,6 +1055,7 @@
       "endTime": 1748518063000,
       "duration": 135,
       "notBefore": null,
+      "notBeforeAEST": null,
       "round": "R1",
       "score": {
         "current": {
@@ -1080,13 +1107,14 @@
       "status": "in_progress",
       "startTime": null,
       "endTime": null,
-      "duration": 103,
+      "duration": 116,
       "notBefore": null,
+      "notBeforeAEST": null,
       "round": "R1",
       "score": {
         "current": {
-          "home": "15",
-          "away": "30"
+          "home": "40",
+          "away": "A"
         },
         "sets": {
           "home": [
@@ -1095,7 +1123,7 @@
           ],
           "away": [
             7,
-            4
+            6
           ]
         }
       }
@@ -1133,6 +1161,7 @@
       "endTime": null,
       "duration": 0,
       "notBefore": null,
+      "notBeforeAEST": null,
       "round": "R1",
       "score": {
         "current": {
@@ -1178,6 +1207,7 @@
       "endTime": null,
       "duration": 0,
       "notBefore": null,
+      "notBeforeAEST": null,
       "round": "R1",
       "score": {
         "current": {
@@ -1225,6 +1255,7 @@
       "endTime": 1748514458000,
       "duration": 73,
       "notBefore": null,
+      "notBeforeAEST": null,
       "round": "R1",
       "score": {
         "current": {
@@ -1274,12 +1305,13 @@
       "status": "in_progress",
       "startTime": null,
       "endTime": null,
-      "duration": 171,
+      "duration": 184,
       "notBefore": null,
+      "notBeforeAEST": null,
       "round": "R1",
       "score": {
         "current": {
-          "home": "15",
+          "home": "40",
           "away": "40"
         },
         "sets": {
@@ -1291,7 +1323,7 @@
           "away": [
             6,
             7,
-            2
+            4
           ]
         }
       }
@@ -1329,6 +1361,7 @@
       "endTime": null,
       "duration": 0,
       "notBefore": null,
+      "notBeforeAEST": null,
       "round": "R1",
       "score": {
         "current": {
@@ -1376,6 +1409,7 @@
       "endTime": 1748515505000,
       "duration": 93,
       "notBefore": null,
+      "notBeforeAEST": null,
       "round": "R1",
       "score": {
         "current": {
@@ -1427,6 +1461,7 @@
       "endTime": 1748520797000,
       "duration": 70,
       "notBefore": null,
+      "notBeforeAEST": null,
       "round": "R1",
       "score": {
         "current": {
@@ -1476,8 +1511,9 @@
       "status": "in_progress",
       "startTime": null,
       "endTime": null,
-      "duration": 65,
+      "duration": 78,
       "notBefore": null,
+      "notBeforeAEST": null,
       "round": "R1",
       "score": {
         "current": {
@@ -1491,7 +1527,7 @@
           ],
           "away": [
             3,
-            2
+            4
           ]
         }
       }
@@ -1529,6 +1565,7 @@
       "endTime": null,
       "duration": 0,
       "notBefore": "16:00",
+      "notBeforeAEST": "24:00",
       "round": "R1",
       "score": {
         "current": {
@@ -1576,6 +1613,7 @@
       "endTime": 1748514686000,
       "duration": 77,
       "notBefore": null,
+      "notBeforeAEST": null,
       "round": "R1",
       "score": {
         "current": {
@@ -1627,6 +1665,7 @@
       "endTime": 1748523773000,
       "duration": 125,
       "notBefore": null,
+      "notBeforeAEST": null,
       "round": "R1",
       "score": {
         "current": {
@@ -1678,20 +1717,23 @@
       "status": "in_progress",
       "startTime": null,
       "endTime": null,
-      "duration": 15,
+      "duration": 28,
       "notBefore": null,
+      "notBeforeAEST": null,
       "round": "R1",
       "score": {
         "current": {
-          "home": "0",
-          "away": "0"
+          "home": "15",
+          "away": "15"
         },
         "sets": {
           "home": [
-            2
+            2,
+            0
           ],
           "away": [
-            3
+            6,
+            0
           ]
         }
       }
@@ -1729,6 +1771,7 @@
       "endTime": null,
       "duration": 0,
       "notBefore": null,
+      "notBeforeAEST": null,
       "round": "R1",
       "score": {
         "current": {
@@ -1776,6 +1819,7 @@
       "endTime": 1748513346000,
       "duration": 58,
       "notBefore": null,
+      "notBeforeAEST": null,
       "round": "R1",
       "score": {
         "current": {
@@ -1819,6 +1863,7 @@
       "endTime": 1748519499000,
       "duration": 86,
       "notBefore": null,
+      "notBeforeAEST": null,
       "round": "R2",
       "score": {
         "current": {
@@ -1860,22 +1905,23 @@
       "status": "in_progress",
       "startTime": null,
       "endTime": null,
-      "duration": 84,
+      "duration": 97,
       "notBefore": null,
+      "notBeforeAEST": null,
       "round": "R2",
       "score": {
         "current": {
-          "home": "40",
-          "away": "40"
+          "home": "30",
+          "away": "30"
         },
         "sets": {
           "home": [
             5,
-            4
+            5
           ],
           "away": [
             7,
-            4
+            6
           ]
         }
       }
@@ -1913,6 +1959,7 @@
       "endTime": null,
       "duration": 0,
       "notBefore": null,
+      "notBeforeAEST": null,
       "round": "R1",
       "score": {
         "current": {
@@ -1960,6 +2007,7 @@
       "endTime": 1748514795000,
       "duration": 83,
       "notBefore": null,
+      "notBeforeAEST": null,
       "round": "R1",
       "score": {
         "current": {
@@ -2011,6 +2059,7 @@
       "endTime": 1748521557000,
       "duration": 95,
       "notBefore": null,
+      "notBeforeAEST": null,
       "round": "R1",
       "score": {
         "current": {
@@ -2062,22 +2111,23 @@
       "status": "in_progress",
       "startTime": null,
       "endTime": null,
-      "duration": 55,
+      "duration": 68,
       "notBefore": null,
+      "notBeforeAEST": null,
       "round": "R1",
       "score": {
         "current": {
-          "home": "0",
-          "away": "40"
+          "home": "15",
+          "away": "15"
         },
         "sets": {
           "home": [
             4,
-            3
+            5
           ],
           "away": [
             6,
-            2
+            4
           ]
         }
       }
@@ -2115,6 +2165,7 @@
       "endTime": null,
       "duration": 0,
       "notBefore": "16:00",
+      "notBeforeAEST": "24:00",
       "round": "R1",
       "score": {
         "current": {
@@ -2154,6 +2205,7 @@
       "endTime": 1748515897000,
       "duration": 98,
       "notBefore": null,
+      "notBeforeAEST": null,
       "round": "R2",
       "score": {
         "current": {
@@ -2205,6 +2257,7 @@
       "endTime": 1748522381000,
       "duration": 91,
       "notBefore": null,
+      "notBeforeAEST": null,
       "round": "R1",
       "score": {
         "current": {
@@ -2254,8 +2307,9 @@
       "status": "in_progress",
       "startTime": null,
       "endTime": null,
-      "duration": 42,
+      "duration": 55,
       "notBefore": null,
+      "notBeforeAEST": null,
       "round": "R1",
       "score": {
         "current": {
@@ -2265,11 +2319,11 @@
         "sets": {
           "home": [
             2,
-            2
+            4
           ],
           "away": [
             6,
-            1
+            3
           ]
         }
       }
@@ -2307,6 +2361,7 @@
       "endTime": null,
       "duration": 0,
       "notBefore": null,
+      "notBeforeAEST": null,
       "round": "R1",
       "score": {
         "current": {
@@ -2354,6 +2409,7 @@
       "endTime": 1748517754000,
       "duration": 132,
       "notBefore": null,
+      "notBeforeAEST": null,
       "round": "R1",
       "score": {
         "current": {
@@ -2394,11 +2450,12 @@
       ],
       "seedA": null,
       "seedB": null,
-      "status": "in_progress",
+      "status": "finished",
       "startTime": null,
-      "endTime": null,
-      "duration": 120,
+      "endTime": 1748526447000,
+      "duration": 129,
       "notBefore": null,
+      "notBeforeAEST": null,
       "round": "R2",
       "score": {
         "current": {
@@ -2414,7 +2471,7 @@
           "away": [
             6,
             4,
-            5
+            7
           ]
         }
       }
@@ -2444,6 +2501,7 @@
       "endTime": null,
       "duration": 0,
       "notBefore": null,
+      "notBeforeAEST": null,
       "round": "R2",
       "score": {
         "current": {
@@ -2489,6 +2547,7 @@
       "endTime": null,
       "duration": 0,
       "notBefore": null,
+      "notBeforeAEST": null,
       "round": "R1",
       "score": {
         "current": {
@@ -2528,6 +2587,7 @@
       "endTime": 1748518149000,
       "duration": 139,
       "notBefore": null,
+      "notBeforeAEST": null,
       "round": "R2",
       "score": {
         "current": {
@@ -2570,16 +2630,17 @@
       ],
       "seedA": null,
       "seedB": 32,
-      "status": "in_progress",
+      "status": "finished",
       "startTime": null,
-      "endTime": null,
-      "duration": 110,
+      "endTime": 1748526269000,
+      "duration": 117,
       "notBefore": null,
+      "notBeforeAEST": null,
       "round": "R2",
       "score": {
         "current": {
-          "home": "40",
-          "away": "A"
+          "home": "0",
+          "away": "0"
         },
         "sets": {
           "home": [
@@ -2588,7 +2649,7 @@
           ],
           "away": [
             7,
-            4
+            6
           ]
         }
       }
@@ -2618,6 +2679,7 @@
       "endTime": null,
       "duration": 0,
       "notBefore": null,
+      "notBeforeAEST": null,
       "round": "R2",
       "score": {
         "current": {
@@ -2663,6 +2725,7 @@
       "endTime": null,
       "duration": 0,
       "notBefore": null,
+      "notBeforeAEST": null,
       "round": "R1",
       "score": {
         "current": {
@@ -2710,6 +2773,7 @@
       "endTime": null,
       "duration": 0,
       "notBefore": null,
+      "notBeforeAEST": null,
       "round": "R1",
       "score": {
         "current": {
